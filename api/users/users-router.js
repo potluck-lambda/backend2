@@ -47,13 +47,4 @@ router.delete('/:id', checkId, (req, res, next) => {
         .catch(next)
 })
 
-router.use((err, req, res, next) => {
-    res.status(500).json({
-        message: err.message,
-        stack: err.stack,
-        custom: 'Server error: something went wrong.'
-    })
-})
-
-
 module.exports = router

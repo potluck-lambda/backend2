@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {checkBody, validateUniqueUser, checkUsernameExists} = require('./auth-middleware')
+const {checkBody, validateUniqueUser, checkUsernameExists} = require('./auth-mw')
 const bcrypt = require('bcrypt')
 const Auth = require('./auth-model')
 const tokenBuilder = require('./token-builder')

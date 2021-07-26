@@ -22,7 +22,7 @@ router.get('/:id', checkId, (req, res, next) => {
 
 
 router.post('/', checkPayload, (req, res, next) => {
-    Potlucks.addClass(req.body)
+    Potlucks.addPotluck(req.body)
          .then(newClass => {
              res.status(201).json(newClass)
          })
@@ -32,7 +32,7 @@ router.post('/', checkPayload, (req, res, next) => {
 
  router.put('/:id', checkId, (req, res, next) => {
      const { id } = req.params
-     Potlucks.editClass(id, req.body)
+     Potlucks.editPotluck(id, req.body)
      .then(update => {
          res.json(update)
      })
@@ -42,7 +42,7 @@ router.post('/', checkPayload, (req, res, next) => {
 
  router.delete('/:id', checkId, (req, res, next) => {
      const { id } = req.params
-     Potlucks.deleteClass(id)
+     Potlucks.deletePotluck(id)
      .then(deleted => {
          res.json(deleted)
      })

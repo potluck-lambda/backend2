@@ -1,4 +1,4 @@
-const Users = require('./user-model')
+const Users = require('./users-model')
 
 const checkId = async (req, res, next) => {
     const { id } = req.params
@@ -6,7 +6,7 @@ const checkId = async (req, res, next) => {
     !check ? res.status(404).json({message: `User with ID of ${id} not found.`}) : next()
 }
 
-const checkBody = async (req, res, next) => {
+const checkBody = (req, res, next) => {
     const { username, password } = req.body
     !username || !password ? res.status(401).json({ message: 'Username and password are required.' }) : next()
 }
