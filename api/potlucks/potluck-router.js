@@ -6,7 +6,7 @@ const {checkId, checkPayload} = require('./potluck-mw')
 router.get('/', (req, res, next) => {
     Potlucks.getAll()
         .then(potlucks => {
-            res.json(Potlucks);
+            res.json(potlucks);
         })
         .catch(next)
 })
