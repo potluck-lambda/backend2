@@ -21,6 +21,7 @@ router.post('/login', checkBody, checkUsernameExists, (req, res, next) => {
         const token = tokenBuilder(req.user)
         res.json({
           message: `Welcome, ${req.user.username}`,
+          user_id: req.user.user_id,
           token
         })
       }
